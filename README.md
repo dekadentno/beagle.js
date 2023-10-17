@@ -15,9 +15,13 @@ beagle.js is a collection of lightweight JavaScript functions designed for quick
 
 Scours the webpage for common points that might be susceptible to injections such as input fields, buttons, and more. Returns a table-format report of all elements discovered with their respective properties.
 
+![findInjectionPoints](findInjectionPoints.png)
+
 ### `findLinks.js`
 
 Identifies all anchor (<a>) tags on the webpage, categorizing them based on their URLs. Returns a table-format report detailing each link's URL, anchor text, and a flag indicating if it's external.
+
+![findLinks](findLinks.png)
 
 ## 🙋 Contribution
 
