@@ -26,7 +26,6 @@ Identifies all anchor (<a>) tags on the webpage, categorizing them based on thei
 ## 🙋 Contribution
 
 If you have suggestions for additional scripts or improvements to existing ones, please open an issue or submit a pull request!
-License
 
 ## 📄 License
 This project is open source and available under the MIT License.
