@@ -1,5 +1,6 @@
 const Beagle = {
     findLinks: function () {
+        console.log("Find links: ");
         let results = [];
         document.querySelectorAll('a').forEach((url) => {
             const externalLink = url.host !== window.location.host;
@@ -14,6 +15,7 @@ const Beagle = {
         console.table(results);
     },
     findInjectionPoints() {
+        console.log("Find injection points: ");
         let inputs = document.querySelectorAll('input,textarea,select');
         let forms = document.querySelectorAll('form');
         let links = document.querySelectorAll('a[href]');
@@ -36,5 +38,18 @@ const Beagle = {
         }
 
         console.table(table);
+    },
+    extractEmails() {
+        console.log("Extract emails: ");
+        const bodyText = document.body.innerText;
+        const emailRegex = /\b[A-Za-z0-9._%+-]+@[A-Za-z0-9.-]+\.[A-Z|a-z]{2,}\b/g;
+        const emails = bodyText.match(emailRegex) || [];
+        const uniqueEmails = [...new Set(emails)];
+        console.table(uniqueEmails);
+    },
+    startAll() {
+        this.findLinks();
+        this.findInjectionPoints();
+        this.extractEmails();
     }
 }
