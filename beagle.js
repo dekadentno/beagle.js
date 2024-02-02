@@ -47,9 +47,20 @@ const Beagle = {
         const uniqueEmails = [...new Set(emails)];
         console.table(uniqueEmails);
     },
+    findHtmlComments() {
+        console.log("Find comments: ");
+        const comments = [];
+        const nodeIterator = document.createNodeIterator(document.documentElement, NodeFilter.SHOW_COMMENT);
+        let curNode;
+        while (curNode = nodeIterator.nextNode()) {
+            comments.push(curNode.nodeValue);
+        }
+        console.table(comments);
+    },
     startAll() {
         this.findLinks();
         this.findInjectionPoints();
         this.extractEmails();
+        this.findHtmlComments();
     }
 }
